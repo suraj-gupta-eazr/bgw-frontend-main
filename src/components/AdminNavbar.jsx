@@ -18,19 +18,19 @@ const AdminNavbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center px-10 h-24 mx-auto text-white w-full md:px-15 sticky bg-black z-40 top-0">
-        <div className="cursor-pointer" onClick={handleNav}>
+       <div className="flex justify-between items-center px-10 h-24 border-b-4 shadow-black mx-auto text-[#2caf2c] w-full md:px-15 sticky bg-white z-40 top-0">
+      <div className="cursor-pointer" onClick={handleNav}>
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
         <ul
           className={
             nav
-              ? "fixed left-0 top-0 w-80 h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-              : "ease-in-out duration-500 fixed left-[-100%]"
+              ? "fixed left-0 top-0 w-80 h-full border-r border-r-gray-900 bg-[#fff] ease-in-out duration-500"
+              : "ease-in-out duration-500 fixed left-[-100%] h-full"
           }
         >
           <div className="flex justify-between ">
-            <h1 className="w-full mt-6 text-3xl font-bold text-[#00df9a] m-4">
+            <h1 className="w-full mt-6 text-3xl font-bold text-[#2caf2c] m-4">
               <Link to="/admin">Admin.</Link>
             </h1>
             <div className="m-7 cursor-pointer" onClick={handleNav}>
@@ -40,7 +40,7 @@ const AdminNavbar = () => {
           {navItems.map((item, index) => (
             <li
               key={index}
-              className="px-2 py-4 border-b border-gray-600 text-md"
+              className="px-4 py-4 border-b border-gray-600 text-md"
             >
               <Link to={item.path}>{item.title}</Link>
             </li>

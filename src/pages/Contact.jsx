@@ -1,12 +1,12 @@
 import React from "react";
-import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Analytics from "../components/Analytics";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   return (
-    <div>
-      <Hero />
+    <div className="bg-[#fff] pt-10">
+      <ContactForm/>
       <Analytics />
       <Footer />
     </div>

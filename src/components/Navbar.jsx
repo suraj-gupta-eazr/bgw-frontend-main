@@ -18,18 +18,18 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="flex justify-between items-center px-10 h-24 mx-auto text-white w-full md:px-15 sticky bg-black z-40 top-0">
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">
+    <div className="flex justify-between items-center px-10 h-24 border-b-4 shadow-black mx-auto text-white w-full md:px-15 sticky bg-white z-40 top-0">
+      <h1 className="w-full text-3xl font-bold text-[#2caf2c]">
       <Link to='/'>REACT.</Link>
       </h1>
-      <ul className="hidden w-max items-center md:flex">
+      <ul className="hidden w-max items-center md:flex text-[#2caf2c]">
         {navItems.map((item, index) => (
           <li key={index} className="p-8 w-max">
-            <Link className="hover:text-[#00df9a]" to={item.path}>{item.title}</Link>
+            <Link className="hover:text-[#258025] text-xl font-bold" to={item.path}>{item.title}</Link>
           </li>
         ))}
       </ul>
-      <div onClick={handleNav} className="block md:hidden">
+      <div onClick={handleNav} className="block md:hidden text-xl text-[#258025]">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
       <ul
