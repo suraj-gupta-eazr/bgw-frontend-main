@@ -5,18 +5,17 @@ import React from 'react'
 
 const AccordionCom = () => {
   return (
-    <div className='w-full bg-white py-16 px-4'>
+    <div className='w-full bg-white lg:pr-72 lg:pl-72 md:pr-28 md:pl-28 pb-8 px-4'>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          Accordion 1
+          HOW YOU CAN SELL YOUR SCRAP ?
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        Click on sell now button Then select the scrap type Weight and fill your personal details 
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -25,11 +24,10 @@ const AccordionCom = () => {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          Accordion 1
+          Which weight machine you are using?
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        Electronic weight machine
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -38,11 +36,34 @@ const AccordionCom = () => {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          Accordion 1
+         how you are giving money 
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        Online and cash both 
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+         how do  you calculate the value of scrap
+        </AccordionSummary>
+        <AccordionDetails>
+        according to scrap market 
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+         does this website has safe server 
+        </AccordionSummary>
+        <AccordionDetails>
+        yes
         </AccordionDetails>
       </Accordion>
     </div>

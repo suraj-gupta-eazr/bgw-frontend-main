@@ -1,65 +1,63 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import {
-  FaDribbbleSquare,
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaInstagram,
-  FaTwitterSquare,
-} from 'react-icons/fa';
+import logo from './../image/Logo.svg'
 
 const Footer = () => {
   return (
-    <div className='w-full px-28 mx-auto py-16 grid lg:grid-cols-3 gap-8 bg-[#000] text-gray-300'>
-      <div>
-        <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
-        <p className='py-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit ullam iste repellat consequatur libero reiciendis, blanditiis accusantium.</p>
-        <div className='flex justify-between md:w-[75%] my-6'>
-            <FaFacebookSquare size={30} />
-            <FaInstagram size={30} />
-            <FaTwitterSquare size={30} />
-            <FaGithubSquare size={30} />
-            <FaDribbbleSquare size={30} />
+    <footer className="bg-white py-8 p-5 rounded-t-3xl shadow-3xl">
+      <div className="container mx-auto px-4 lg:flex lg:justify-between">
+        <div className="lg:w-1/3 mb-8 lg:mb-0">
+          <h2 className="text-xl font-bold mb-4 flex items-center">
+          <img src={logo} alt="company" />
+          <p className="font-nunito font-bold text-2xl ml-2">SaaSup</p>
+          </h2>
+          <p className="text-gray-600 mb-4">
+          YourBhangarwala Turning Waste into Wealth - Simplified. Sell your scrap effortlessly and get the best value instantly!
+          </p>
+          <p className="text-gray-600 mb-2">
+            <a href="mailto:yourbhangarwalaorder@gmail.com">yourbhangarwalaorder@gmail.com</a>
+          </p>
+          <p className="text-gray-600">
+          <i className="fas fa-phone-alt mr-2 text-indigo-600"></i> +91 8879002733<br />
+          <i className="fas fa-phone-alt mr-2 text-indigo-600"></i> +91 8828750021
+          </p>
+        </div>
+        <div className="lg:w-1/3 mb-8 lg:mb-0">
+          <h3 className="text-lg font-semibold mb-4">Pages</h3>
+          <ul className="text-gray-600">
+            <li className="mb-2"><a href="#">Home</a></li>
+            <li className="mb-2"><a href="#">About Us</a></li>
+            <li className="mb-2"><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div className="lg:w-1/3 rounded-3xl bg-[#F9F9F9] p-7">
+          <h3 className="text-lg font-semibold mb-4">Download</h3>
+          <p className="text-gray-600 mb-4">
+            Our app is coming soon. Stay tuned for updates!
+          </p>
+          <div className="flex space-x-4">
+            <button className="bg-gray-300 text-gray-600 px-7 py-4 rounded-full cursor-not-allowed" disabled>
+              <i className="fab fa-apple"></i> Coming Soon
+            </button>
+            <button className="bg-gray-300 text-gray-600 px-7 py-4 rounded-full cursor-not-allowed" disabled>
+              <i className="fab fa-google-play"></i> Coming Soon
+            </button>
+          </div>
         </div>
       </div>
-      <div className='lg:col-span-2 flex justify-between mt-6'>
-    <div>
-        <h6 className='font-medium text-gray-400'>Solutions</h6>
-        <ul>
-            <li className='py-2 text-sm'>Analytics</li>
-            <li className='py-2 text-sm'>Marketing</li>
-            <li className='py-2 text-sm'>Commerce</li>
-            <li className='py-2 text-sm'>Insights</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Support</h6>
-        <ul>
-            <li className='py-2 text-sm'>Pricing</li>
-            <li className='py-2 text-sm'>Documentation</li>
-            <li className='py-2 text-sm'>Guides</li>
-            <li className='py-2 text-sm'>API Status</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Company</h6>
-        <ul>
-            <li className='py-2 text-sm'>About</li>
-            <li className='py-2 text-sm'>Blog</li>
-            <li className='py-2 text-sm'>Jobs</li>
-            <li className='py-2 text-sm'>Press</li>
-            <li className='py-2 text-sm'>Careers</li>
-        </ul>
-    </div>
-    <div>
-        <h6 className='font-medium text-gray-400'>Legal</h6>
-        <ul>
-            <li className='py-2 text-sm'>Claim</li>
-            <li className='py-2 text-sm'>Policy</li>
-            <li className='py-2 text-sm'>Terms</li>
-        </ul>
-    </div>
+      <div className="container mx-auto px-4 mt-8 border-t pt-4 flex justify-between  gap-7">
+        <p className="text-gray-600 text-sm">
+          Copyright © SaaSup | Designed by Victorflow - Powered by Webflow
+        </p>
+        <div className="flex justify-center space-x-4">
+          <a href="#"><i className="fab fa-facebook-f text-gray-600"></i></a>
+          <a href="#"><i className="fab fa-twitter text-gray-600"></i></a>
+          <a href="#"><i className="fab fa-linkedin-in text-gray-600"></i></a>
+          <a href="#"><i className="fab fa-instagram text-gray-600"></i></a>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

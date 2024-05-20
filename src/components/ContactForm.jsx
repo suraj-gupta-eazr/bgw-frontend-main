@@ -1,99 +1,113 @@
-import React, { useState } from 'react';
-import { Container, Typography, TextField, Button, Grid } from '@mui/material';
-import { MdCall , MdEmail} from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
-
+import React, { useState } from "react";
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Grid,
+  Card,
+  CardContent,
+} from "@mui/material";
+import { Subject } from "@mui/icons-material";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission here (e.g., send data to backend or display a success message)
+    console.log(formData);
+  };
+
+  const handleClick = (e) => {
     e.preventDefault();
-    // Add your logic to handle form submission
-    console.log('Form submitted:', formData);
+    console.log(e);
   };
-
   return (
-    <Container sx={{ backgroundColor: 'white' }} >
-      <Typography variant="h3" alignContent='center' className='text-center py-6 font-extrabold' gutterBottom>
-        Contact Us
-      </Typography>
-      <Grid container className='justify-center items-center' spacing={2}>
-        <Grid item xs={11} sm={6} >
-        <div className='flex flex-col justify-center'>
-          <h1 className='md:text-2xl flex gap-6 sm:text-xl items-center font-semibold py-1'><MdCall size={28}/>+91 1234567890</h1>
-          <h1 className='md:text-2xl flex gap-6 sm:text-xl items-center font-semibold py-1'><MdEmail size={28}/> example@gmail.com</h1>
-          <h1 className='md:text-2xl flex gap-6 sm:text-xl font-semibold py-1'> <FaLocationDot className='mt-2' size={30} />shop no 2 example building <br/>  
-          gandhi road borivali west <br/>  mumbai - 400001
-          </h1> 
-         </div> 
-        </Grid>
-        <Grid item xs={11} sm={6}>
-          <form onSubmit={handleSubmit} >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>  
-                <TextField
-                  required
-                  fullWidth
-                  label="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  type="email"
-                  label="Email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  label="Subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  multiline
-                  rows={4}
-                  label="Message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button type="submit" variant="contained" color="primary">
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
-        </Grid>
-      </Grid>           
-    </Container>
+    <div className="my-8 mx-7 sm:my-8 sm:mx-14 md:mx-20 lg:mx-32 xl:mx-56 py-8 px-12 rounded-3xl border-slate-100 border-2 shadow-gray-300 shadow-2xl">
+      <form onSubmit={handleClick}>
+        <div className="grid gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className=" grid grid-cols-1 gap-2">
+              <label className="font-nunito font-semibold">Full Name *</label>
+              <input
+                type="text"
+                placeholder="Suraj Gupta"
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                value={formData.name}
+                className="border-2 p-4 rounded-2xl"
+              />
+            </div>
+            <div className=" grid grid-cols-1 gap-2">
+              <label className="font-nunito font-semibold">Your Email *</label>
+              <input
+                type="text"
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                value={formData.email}
+                placeholder="example@yourmail.com"
+                className="border-2 p-4 rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <div className=" grid grid-cols-1 gap-2">
+              <label className="font-nunito font-semibold">Subject *</label>
+              <input
+                type="text"
+                onChange={(e) =>
+                  setFormData({ ...formData, subject: e.target.value })
+                }
+                value={formData.subject}
+                placeholder="How can we Help"
+                className="border-2 p-4 rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            <div className=" grid grid-cols-1 gap-2">
+              <label className="font-nunito font-semibold">Message *</label>
+              <textarea
+                type="text"
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+                value={formData.message}
+                rows={5}
+                placeholder="Hello there,I would like to talk about how to..."
+                className="border-2 p-4 rounded-2xl"
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-4 mt-3">
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="px-10 py-4 text-white bg-[#242331] rounded-full"
+              >
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

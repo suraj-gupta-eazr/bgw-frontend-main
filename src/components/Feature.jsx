@@ -1,7 +1,5 @@
 import React from "react";
-import door from "../image/door-step.png";
 import book from "../image/bookpickup.png";
-import pay from "../image/pay.png";
 
 const Feature = () => {
   return (

@@ -1,25 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const AdminNavbar = () => {
   const [nav, setNav] = useState(false);
-
+  const navigate = useNavigate(null);
   const handleNav = () => {
     setNav(!nav);
   };
 
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      navigate("/admin");
+    }
+    setNav(false)
+  }, [navigate]);
   const navItems = [
-    { title: "Order", path: "/" },
-    { title: "Bulk Order", path: "/" },
-    { title: "Faq", path: "/faq" },
-    { title: "Contact Us", path: "/contact" },
+    { title: "Sell Now", path: "/admin/sell" },
+    { title: "Bulk Sell", path: "/admin/bulk" },
+    { title: "Donate", path: "/admin/donate" },
+    { title: "Feedback", path: "/admin/feedback" },
   ];
-
+  const clearLogin = () => {
+    localStorage.removeItem("userData");
+    navigate("/admin");
+    setNav(!nav);
+  };
+  
   return (
     <>
-       <div className="flex justify-between items-center px-10 h-24 border-b-4 shadow-black mx-auto text-[#2caf2c] w-full md:px-15 sticky bg-white z-40 top-0">
-      <div className="cursor-pointer" onClick={handleNav}>
+      <div className="flex justify-between items-center px-10 h-24 border-b-4 shadow-black mx-auto text-[#050505] w-full md:px-15 sticky bg-white z-40 top-0">
+        <div className="cursor-pointer" onClick={handleNav}>
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
         </div>
         <ul
@@ -30,7 +42,7 @@ const AdminNavbar = () => {
           }
         >
           <div className="flex justify-between ">
-            <h1 className="w-full mt-6 text-3xl font-bold text-[#2caf2c] m-4">
+            <h1 className="w-full mt-6 text-3xl font-bold text-[#070707] m-4">
               <Link to="/admin">Admin.</Link>
             </h1>
             <div className="m-7 cursor-pointer" onClick={handleNav}>
@@ -45,6 +57,7 @@ const AdminNavbar = () => {
               <Link to={item.path}>{item.title}</Link>
             </li>
           ))}
+          <li className="px-4 py-4 border-b border-gray-600 text-md cursor-pointer" onClick={clearLogin}>Logout</li>
         </ul>
       </div>
       <Outlet />

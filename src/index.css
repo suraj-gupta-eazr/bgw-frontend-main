@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 @tailwind utilities;
 
 body {
-  background-color: #000300;
+  background-color: #fff;
 }
 
 .slick-next {

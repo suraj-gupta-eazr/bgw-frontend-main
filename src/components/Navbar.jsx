@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import logo from "../image/Logo.svg";
 import { Link, Outlet } from "react-router-dom";
 
 const Navbar = () => {
@@ -18,9 +19,9 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="flex justify-between items-center px-10 h-24 border-b-4 shadow-black mx-auto text-white w-full md:px-15 sticky bg-white z-40 top-0">
+      {/* <div className="flex justify-center items-center px-10 h-24 border-b-4 shadow-black mx-auto text-white w-full md:px-15 sticky bg-white z-40 top-0">
       <h1 className="w-full text-3xl font-bold text-[#2caf2c]">
-      <Link to='/'>REACT.</Link>
+      <Link to='/'><h6>Your</h6><h4>Bhangarwala.</h4></Link>
       </h1>
       <ul className="hidden w-max items-center md:flex text-[#2caf2c]">
         {navItems.map((item, index) => (
@@ -46,8 +47,56 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-    </div>
-    <Outlet />
+    </div> */}
+      <div className="fixed left-0 top-4 h-24 flex justify-center items-center w-full  p-9 z-50 ">
+        <div className="flex justify-between items-center bg-[#F9F9F9] rounded-full py-5 px-9 md:gap-60 lg:gap-72 gap-48 border-2 drop-shadow-lg">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="company" />
+            <p className="font-nunito font-bold text-3xl">SaaSup</p>
+          </div>
+          <div className="hidden w-max md:flex items-center gap-14">
+            {navItems.map((item, index) => (
+              <h6
+                key={index}
+                className="font-nunito text-slate-800 font-semibold w-max"
+              >
+                <Link onClick={() => setNav(false)} to={item.path}>
+                  {item.title}
+                </Link>
+              </h6>
+            ))}
+          </div>
+          <div
+            onClick={handleNav}
+            className="block md:hidden text-xl text-slate-800 "
+          >
+            {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          </div>
+          <ul
+            className={
+              nav
+                ? "fixed left-0 top-0 w-[60%] p-9 rounded-r-3xl border-r bg-white ease-in-out duration-500"
+                : "ease-in-out duration-500 bg-white fixed left-[-100%]"
+            }
+          >
+            <div className="flex items-center gap-3 mb-9 mt-3">
+              <img src={logo} alt="company" />
+              <p className="font-nunito font-bold text-3xl">SaaSup</p>
+            </div>
+            {navItems.map((item, index) => (
+              <li
+                key={index}
+                className="px-2 font-nunito py-4 font-bold text-md"
+              >
+                <Link onClick={() => setNav(false)} to={item.path}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <Outlet />
     </>
   );
 };

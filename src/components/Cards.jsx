@@ -5,24 +5,30 @@ import pay from '../image/pay.png'
 
 const Cards = () => {
   return (
-    <div className='w-full py-[10rem] px-4 bg-white'>
+    <div className='w-full mb-12 px-4 bg-white'>
       <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8'>
-          <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-              <img className='w-44 mx-auto mt-[-3rem] bg-white' src={book} alt="/" />
-              <h2 className='text-2xl font-bold text-center py-8'>Book a Pickup</h2>
-              <p className='py-2 mx-8 text-center'>Schedule scrap pickup effortlessly with us. Let's make your unwanted items disappear responsibly.</p>
-         </div>
-          <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-              <img className='w-44 mx-auto mt-[-3rem] bg-white' src={door} alt="/" />
-              <h2 className='text-2xl font-bold text-center py-8'>Scrap Hero at your doorstep</h2>
-              <p className='py-2 text-center mx-6 mt-2'>The executive will arrive at your doorstep at the date and time you specify within select areas of our city.</p>
-              
+      <div className="shadow-2xl flex-col justify-center items-center border-slate-100 border-2 shadow-gray-300 rounded-3xl py-8 px-10 flex gap-3 w-full ">
+            <img src={book} className="h-28" alt="mail" />
+            <h4 className="font-nunito font-bold text-center">Book a Pickup</h4>
+            <h4 className="font-nunito text-[#797979] text-center">
+            Schedule scrap pickup effortlessly with us. Let's make your unwanted items disappear responsibly.
+            </h4>
           </div>
-          <div className='w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-              <img className='w-44 mx-auto mt-[-3rem] bg-white' src={pay} alt="/" />
-              <h2 className='text-2xl font-bold text-center py-8'>Get Paid </h2>
-              <p className='py-2 text-center mx-6 mt-2'>We compensate customers fairly, taking into account minimal operational expenses for our doorstep service.</p>
-             
+          
+          <div className="shadow-2xl flex-col justify-center items-center border-slate-100 border-2 shadow-gray-300 rounded-3xl py-8 px-10 flex gap-3 w-full ">
+            <img src={door} className="h-28" alt="mail" />
+            <h4 className="font-nunito font-bold text-center">Scrap Hero at your doorstep</h4>
+            <h4 className="font-nunito text-[#797979] text-center">
+            The executive will arrive at your doorstep at the date and time you specify within select areas  of our city.
+            </h4>
+          </div>
+          
+          <div className="shadow-2xl flex-col justify-center items-center border-slate-100 border-2 shadow-gray-300 rounded-3xl py-8 px-10 flex gap-3 w-full ">
+            <img src={pay} className="h-32" alt="mail" />
+            <h4 className="font-nunito font-bold text-center">Get Paid</h4>
+            <h4 className="font-nunito text-[#797979] text-center">
+            We compensate customers fairly, taking into account minimal operational expenses for our doorstep service.
+            </h4>
           </div>
       </div>
     </div>
